@@ -1,0 +1,21 @@
+[package]
+name = "rand_rccrypto"
+version = "0.1.0"
+authors = [ "Edouard Oger <eoger@fastmail.com>",]
+edition = "2024"
+rust-version = "1.85.0"
+license = "MPL-2.0"
+
+[lib]
+crate-type = [ "lib",]
+
+[dependencies]
+rand_core = "0.9.3"
+
+[dependencies.rc_crypto]
+path = "../rc_crypto"
+
+[dependencies.rand]
+version = "0.9.2"
+default-features = false
+features = [ "std",]

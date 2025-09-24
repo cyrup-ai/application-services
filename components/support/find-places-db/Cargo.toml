@@ -1,0 +1,12 @@
+[package]
+name = "find-places-db"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85.0"
+
+[dependencies]
+dirs = "6.0.0"
+anyhow = "1.0.98"
+
+[dependencies.error-support]
+path = "../error"

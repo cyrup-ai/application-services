@@ -1,0 +1,22 @@
+[[test]]
+name = "tests"
+path = "tests.rs"
+
+[package]
+name = "error-support-tests"
+version = "0.1.0"
+authors = [ "Sync Team <sync-team@mozilla.com>",]
+edition = "2024"
+rust-version = "1.85.0"
+license = "MPL-2.0"
+publish = false
+
+[dev-dependencies]
+thiserror = "2.0.12"
+
+[dev-dependencies.trybuild]
+version = "1.0.106"
+features = [ "diff",]
+
+[dev-dependencies.error-support]
+path = "../"

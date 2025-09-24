@@ -1,0 +1,60 @@
+[package]
+name = "push"
+edition = "2024"
+rust-version = "1.85.0"
+version = "0.1.0"
+authors = [ "jrconlin <me+crypt@jrconlin.com>", "Phil Jenvey <pjenvey@underboss.org>",]
+license = "MPL-2.0"
+exclude = [ "/android", "/ios",]
+
+[dependencies]
+serde = "1.0.221"
+serde_json = "1.0.145"
+bincode = "2.0.1"
+lazy_static = "1.5.0"
+base64 = "0.23.2"
+url = "2.5.4"
+thiserror = "2.0.12"
+
+[dev-dependencies]
+mockito = "1.7.0"
+hex = "0.4.3"
+tempfile = "3.20.0"
+mockall = "0.13.1"
+
+[dependencies.rusqlite]
+version = "0.37.0"
+features = [ "bundled", "unlock_notify",]
+
+[dependencies.viaduct]
+path = "../viaduct"
+
+[dependencies.error-support]
+path = "../support/error"
+
+[dependencies.sql-support]
+path = "../support/sql"
+
+[dependencies.rc_crypto]
+path = "../support/rc_crypto"
+features = [ "ece",]
+
+[dependencies.uniffi]
+version = "0.29.4"
+
+[dependencies.types]
+path = "../support/types"
+
+[build-dependencies.uniffi]
+version = "0.29.4"
+features = [ "build",]
+
+[dev-dependencies.error-support]
+path = "../support/error"
+features = [ "testing",]
+
+[dev-dependencies.viaduct-reqwest]
+path = "../support/viaduct-reqwest"
+
+[dev-dependencies.nss]
+path = "../support/rc_crypto/nss"

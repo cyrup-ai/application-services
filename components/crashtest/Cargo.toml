@@ -1,0 +1,19 @@
+[package]
+name = "crashtest"
+edition = "2024"
+rust-version = "1.85.0"
+version = "0.1.0"
+authors = [ "Ryan Kelly <rfkelly@mozilla.com>",]
+license = "MPL-2.0"
+exclude = [ "/android", "/ios",]
+
+[dependencies]
+log = "0.4.27"
+thiserror = "2.0.12"
+
+[dependencies.uniffi]
+version = "0.29.4"
+
+[build-dependencies.uniffi]
+version = "0.29.4"
+features = [ "build",]

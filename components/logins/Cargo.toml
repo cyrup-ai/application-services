@@ -1,0 +1,77 @@
+[package]
+name = "logins"
+edition = "2024"
+rust-version = "1.85.0"
+version = "0.1.0"
+authors = [ "Thom Chiovoloni <tchiovoloni@mozilla.com>",]
+license = "MPL-2.0"
+exclude = [ "/android", "/ios",]
+
+[features]
+default = []
+keydb = [ "nss/keydb", "dep:async-trait", "dep:futures",]
+
+[dependencies]
+serde = "1.0.219"
+serde_derive = "1.0.219"
+serde_json = "1.0.145"
+parking_lot = "0.12.4"
+lazy_static = "1.5.0"
+url = "2.5.4"
+thiserror = "2.0.12"
+anyhow = "1.0.98"
+
+[dev-dependencies]
+more-asserts = "0.3.1"
+tempfile = "3.20.0"
+
+[dependencies.sync15]
+path = "../sync15"
+features = [ "standalone-sync",]
+
+[dependencies.sql-support]
+path = "../support/sql"
+
+[dependencies.jwcrypto]
+path = "../support/jwcrypto"
+
+[dependencies.nss]
+path = "../support/rc_crypto/nss"
+default-features = false
+
+[dependencies.interrupt-support]
+path = "../support/interrupt"
+
+[dependencies.error-support]
+path = "../support/error"
+
+[dependencies.rusqlite]
+version = "0.37.0"
+features = [ "limits", "unlock_notify",]
+
+[dependencies.sync-guid]
+path = "../support/guid"
+features = [ "rusqlite_support", "random",]
+
+[dependencies.uniffi]
+version = "0.29.4"
+
+[dependencies.async-trait]
+version = "0.1.88"
+optional = true
+
+[dependencies.futures]
+version = "0.3.32"
+optional = true
+features = [ "executor",]
+
+[build-dependencies.uniffi]
+version = "0.29.4"
+features = [ "build",]
+
+[dev-dependencies.error-support]
+path = "../support/error"
+features = [ "testing",]
+
+[dev-dependencies.nss]
+path = "../support/rc_crypto/nss"

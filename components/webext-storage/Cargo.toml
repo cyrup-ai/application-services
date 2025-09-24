@@ -1,0 +1,67 @@
+[package]
+name = "webext-storage"
+edition = "2024"
+rust-version = "1.85.0"
+version = "0.1.0"
+authors = [ "sync-team@mozilla.com",]
+license = "MPL-2.0"
+exclude = [ "/android",]
+
+[features]
+default = []
+
+[dependencies]
+anyhow = "1.0.98"
+thiserror = "2.0.12"
+ffi-support = "0.4.4"
+lazy_static = "1.5.0"
+parking_lot = "0.12.4"
+serde = "1.0.219"
+serde_json = "1.0.145"
+serde_derive = "1.0.219"
+
+[dev-dependencies]
+tempfile = "3.20.0"
+
+[dependencies.error-support]
+path = "../support/error"
+
+[dependencies.interrupt-support]
+path = "../support/interrupt"
+
+[dependencies.rusqlite]
+version = "0.37.0"
+features = [ "functions", "bundled", "serde_json", "unlock_notify",]
+
+[dependencies.sql-support]
+path = "../support/sql"
+
+[dependencies.sync15]
+path = "../../components/sync15"
+features = [ "sync-engine",]
+
+[dependencies.sync-guid]
+path = "../support/guid"
+features = [ "rusqlite_support", "random",]
+
+[dependencies.uniffi]
+version = "0.29.4"
+
+[dependencies.url]
+version = "2.5.4"
+features = [ "serde",]
+
+[dev-dependencies.error-support]
+path = "../support/error"
+features = [ "testing",]
+
+[dev-dependencies.sql-support]
+path = "../support/sql"
+
+[dev-dependencies.serde_json]
+version = "1.0.145"
+features = [ "preserve_order",]
+
+[build-dependencies.uniffi]
+version = "0.29.4"
+features = [ "build",]

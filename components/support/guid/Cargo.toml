@@ -1,0 +1,33 @@
+[package]
+name = "sync-guid"
+version = "0.1.0"
+authors = [ "Thom Chiovoloni <tchiovoloni@mozilla.com>",]
+license = "MPL-2.0"
+edition = "2024"
+rust-version = "1.85.0"
+
+[features]
+random = [ "rand", "base64",]
+rusqlite_support = [ "rusqlite",]
+serde_support = [ "serde",]
+default = [ "serde_support",]
+
+[dev-dependencies]
+serde_test = "1.0.177"
+
+[dependencies.rusqlite]
+version = "0.37.0"
+optional = true
+features = [ "bundled",]
+
+[dependencies.serde]
+version = "1.0.221"
+optional = true
+
+[dependencies.rand]
+version = "0.9.2"
+optional = true
+
+[dependencies.base64]
+version = "0.23.2"
+optional = true

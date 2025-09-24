@@ -1,0 +1,56 @@
+[[example]]
+name = "sync-pass"
+path = "src/sync-pass.rs"
+
+[package]
+name = "example-sync-pass"
+version = "0.1.0"
+authors = [ "sync-team@mozilla.com",]
+license = "MPL-2.0"
+edition = "2024"
+rust-version = "1.85.0"
+publish = false
+
+[dev-dependencies]
+base64 = "0.23.2"
+log = "0.4.27"
+anyhow = "1.0.98"
+prettytable-rs = "0.10.0"
+chrono = "0.4.41"
+clap = "4.5.42"
+tempfile = "3.20.0"
+serde_json = "1.0.145"
+url = "2.5.4"
+
+[dependencies]
+async-trait = "0.1.88"
+
+[dev-dependencies.logins]
+path = "../../components/logins"
+features = [ "keydb",]
+
+[dev-dependencies.sync15]
+path = "../../components/sync15"
+
+[dev-dependencies.sync-guid]
+path = "../../components/support/guid"
+
+[dev-dependencies.sql-support]
+path = "../../components/support/sql"
+
+[dev-dependencies.fxa-client]
+path = "../../components/fxa-client"
+
+[dev-dependencies.cli-support]
+path = "../cli-support"
+
+[dev-dependencies.viaduct-reqwest]
+path = "../../components/support/viaduct-reqwest"
+
+[dev-dependencies.rusqlite]
+version = "0.37.0"
+features = [ "limits",]
+
+[dev-dependencies.init_rust_components]
+path = "../../components/init_rust_components"
+features = [ "keydb",]

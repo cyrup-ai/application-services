@@ -1,0 +1,42 @@
+[[example]]
+name = "places-autocomplete"
+path = "src/autocomplete.rs"
+
+[package]
+name = "example-places-autocomplete"
+version = "0.1.0"
+authors = [ "sync-team@mozilla.com",]
+license = "MPL-2.0"
+edition = "2024"
+rust-version = "1.85.0"
+publish = false
+
+[dev-dependencies]
+log = "0.4.27"
+url = "2.5.4"
+anyhow = "1.0.98"
+clap = "4.5.42"
+tempfile = "3.20.0"
+rand = "0.9.2"
+
+[dev-dependencies.places]
+path = "../../components/places"
+
+[dev-dependencies.interrupt-support]
+path = "../../components/support/interrupt"
+
+[dev-dependencies.sql-support]
+path = "../../components/support/sql"
+
+[dev-dependencies.types]
+path = "../../components/support/types"
+
+[dev-dependencies.find-places-db]
+path = "../../components/support/find-places-db"
+
+[dev-dependencies.rusqlite]
+version = "0.37.0"
+features = [ "functions", "bundled",]
+
+[target."cfg(not(windows))".dev-dependencies]
+termion = "1.5"

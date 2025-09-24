@@ -1,0 +1,31 @@
+[package]
+name = "sql-support"
+edition = "2024"
+rust-version = "1.85.0"
+version = "0.1.0"
+authors = [ "Thom Chiovoloni <tchiovoloni@mozilla.com>",]
+license = "MPL-2.0"
+
+[features]
+default = []
+debug-tools = [ "rusqlite/column_decltype",]
+
+[dependencies]
+lazy_static = "1.5.0"
+thiserror = "2.0.12"
+tempfile = "3.20.0"
+parking_lot = "0.12.4"
+
+[dependencies.error-support]
+path = "../error"
+
+[dependencies.interrupt-support]
+path = "../interrupt"
+
+[dependencies.rusqlite]
+version = "0.37.0"
+features = [ "functions", "limits", "bundled", "unlock_notify",]
+
+[dev-dependencies.error-support]
+path = "../error"
+features = [ "testing",]

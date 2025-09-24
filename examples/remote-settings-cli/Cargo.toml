@@ -1,0 +1,56 @@
+[package]
+name = "examples-remote-settings-cli"
+version = "0.1.0"
+license = "MPL-2.0"
+edition = "2024"
+rust-version = "1.85.0"
+publish = false
+
+[lib]
+name = "dump"
+path = "src/dump/lib.rs"
+
+[dependencies]
+log = "0.4.27"
+anyhow = "1.0.98"
+serde_json = "1.0.145"
+futures = "0.3.31"
+indicatif = "0.18.0"
+thiserror = "2.0.12"
+walkdir = "2.5.0"
+zip = "4.3.0"
+sha2 = "0.11.0-rc.0"
+
+[dependencies.cli-support]
+path = "../cli-support"
+
+[dependencies.remote_settings]
+features = [ "signatures",]
+path = "../../components/remote_settings"
+
+[dependencies.nss]
+path = "../../components/support/rc_crypto/nss"
+
+[dependencies.viaduct-reqwest]
+path = "../../components/support/viaduct-reqwest"
+
+[dependencies.clap]
+version = "4.5.41"
+features = [ "derive",]
+
+[dependencies.env_logger]
+version = "0.11.8"
+default-features = false
+features = [ "humantime",]
+
+[dependencies.reqwest]
+version = "0.12.22"
+features = [ "json",]
+
+[dependencies.tokio]
+version = "1.47.0"
+features = [ "full",]
+
+[dependencies.serde]
+version = "1.0.219"
+features = [ "derive",]

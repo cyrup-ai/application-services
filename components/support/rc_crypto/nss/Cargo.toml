@@ -1,0 +1,32 @@
+[package]
+name = "nss"
+version = "0.1.0"
+authors = [ "Sync Team <sync-team@mozilla.com>",]
+edition = "2024"
+rust-version = "1.85.0"
+license = "MPL-2.0"
+
+[lib]
+crate-type = [ "lib",]
+
+[dependencies]
+base64 = "0.23.2"
+thiserror = "2.0.12"
+serde = "1.0.219"
+serde_derive = "1.0.219"
+
+[features]
+default = []
+gecko = [ "nss_sys/gecko",]
+keydb = [ "dep:once_cell",]
+backtrace = [ "error-support/backtrace",]
+
+[dependencies.error-support]
+path = "../../error"
+
+[dependencies.nss_sys]
+path = "nss_sys"
+
+[dependencies.once_cell]
+version = "1.21.3"
+optional = true

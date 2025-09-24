@@ -1,0 +1,72 @@
+[package]
+name = "places"
+edition = "2024"
+rust-version = "1.85.0"
+version = "0.1.0"
+authors = [ "Sync Team <sync-team@mozilla.com>",]
+license = "MPL-2.0"
+exclude = [ "/android", "/ios",]
+
+[features]
+default = []
+
+[dependencies]
+serde = "1.0.219"
+serde_derive = "1.0.219"
+serde_json = "1.0.145"
+parking_lot = "0.12.4"
+lazy_static = "1.5.0"
+percent-encoding = "2.3.1"
+caseless = "0.2.2"
+bitflags = "2.9.1"
+idna = "1.0.3"
+memchr = "2.7.5"
+dogear = "0.5.0"
+thiserror = "2.0.12"
+anyhow = "1.0.98"
+
+[dev-dependencies]
+pretty_assertions = "1.4.1"
+tempfile = "3.20.0"
+
+[dependencies.sync15]
+path = "../sync15"
+features = [ "standalone-sync",]
+
+[dependencies.url]
+version = "2.5.4"
+features = [ "serde",]
+
+[dependencies.rusqlite]
+version = "0.37.0"
+features = [ "functions", "window", "bundled", "unlock_notify",]
+
+[dependencies.sql-support]
+path = "../support/sql"
+
+[dependencies.types]
+path = "../support/types"
+
+[dependencies.interrupt-support]
+path = "../support/interrupt"
+
+[dependencies.error-support]
+path = "../support/error"
+
+[dependencies.sync-guid]
+path = "../support/guid"
+features = [ "rusqlite_support", "random",]
+
+[dependencies.uniffi]
+version = "0.29.4"
+
+[dev-dependencies.error-support]
+path = "../support/error"
+features = [ "testing",]
+
+[dev-dependencies.sql-support]
+path = "../support/sql"
+
+[build-dependencies.uniffi]
+version = "0.29.4"
+features = [ "build",]

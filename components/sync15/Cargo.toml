@@ -1,0 +1,76 @@
+[package]
+name = "sync15"
+edition = "2024"
+rust-version = "1.85.0"
+version = "0.1.0"
+authors = [ "Sync Team <sync-team@mozilla.com>",]
+license = "MPL-2.0"
+exclude = [ "/android", "/ios",]
+
+[features]
+default = [ "sync-engine",]
+random-guid = [ "sync-guid/random",]
+crypto = [ "rc_crypto", "base16", "base64",]
+sync-engine = [ "random-guid",]
+sync-client = [ "sync-engine", "crypto", "viaduct", "url",]
+standalone-sync = [ "sync-client",]
+
+[dependencies]
+anyhow = "1.0.98"
+lazy_static = "1.5.0"
+serde_derive = "1.0.221"
+serde_json = "1.0.145"
+serde_path_to_error = "0.1.17"
+thiserror = "2.0.12"
+
+[dependencies.base16]
+version = "0.2.1"
+optional = true
+
+[dependencies.base64]
+version = "0.23.2"
+optional = true
+
+[dependencies.error-support]
+path = "../support/error"
+
+[dependencies.interrupt-support]
+path = "../support/interrupt"
+
+[dependencies.payload-support]
+path = "../support/payload"
+
+[dependencies.rc_crypto]
+path = "../support/rc_crypto"
+features = [ "hawk",]
+optional = true
+
+[dependencies.serde]
+version = "1.0.221"
+features = [ "derive",]
+
+[dependencies.sync-guid]
+path = "../support/guid"
+features = [ "random",]
+
+[dependencies.uniffi]
+version = "0.29.4"
+
+[dependencies.url]
+version = "2.5.4"
+optional = true
+
+[dependencies.viaduct]
+path = "../viaduct"
+optional = true
+
+[dev-dependencies.error-support]
+path = "../support/error"
+features = [ "testing",]
+
+[dev-dependencies.nss]
+path = "../support/rc_crypto/nss"
+
+[build-dependencies.uniffi]
+version = "0.29.4"
+features = [ "build",]

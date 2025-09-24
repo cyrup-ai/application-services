@@ -1,0 +1,29 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+---
+loader: taskgraph.loader.transform:loader
+
+transforms:
+    - taskgraph.transforms.fetch:transforms
+    - taskgraph.transforms.run:transforms
+    - taskgraph.transforms.task:transforms
+
+task-defaults:
+    docker-image: {in-tree: linux}
+
+tasks:
+    swiftformat:
+        description: swiftformat
+        fetch:
+            type: static-url
+            url: https://github.com/nicklockwood/SwiftFormat/releases/download/0.57.2/swiftformat.zip
+            sha256: 8333fedf95b5c5f04d96614d2049327819e084dcd7a0f9f38dac59aa604a0b74
+            size: 2073326
+    nss-artifact:
+        description: fetches the built NSS artifacts from NSS CI
+        fetch:
+            type: static-url
+            url: https://firefox-ci-tc.services.mozilla.com/api/queue/v1/task/D3JbEsM4T4e5TwGgj8A95g/runs/0/artifacts/public/dist.tar.bz2
+            sha256: e2efc1b01dec93feab051449d3e2b208ee3012508b0fbe00c2c51eb3e79a349e
+            size: 24390597
