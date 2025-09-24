@@ -1,0 +1,32 @@
+[package]
+name = "cli-support"
+edition = "2024"
+rust-version = "1.85.0"
+version = "0.1.0"
+authors = [ "Thom Chiovoloni <tchiovoloni@mozilla.com>", "Mark Hammond <mhammond@mozilla.com>",]
+license = "MPL-2.0"
+
+[dependencies]
+anyhow = "1.0.98"
+log = "0.4.27"
+url = "2.5.4"
+webbrowser = "1.0.5"
+rpassword = "7.4.0"
+
+[dependencies.fxa-client]
+path = "../../components/fxa-client"
+
+[dependencies.remote_settings]
+path = "../../components/remote_settings"
+
+[dependencies.sync_manager]
+path = "../../components/sync_manager"
+
+[dependencies.sync15]
+path = "../../components/sync15"
+features = [ "sync-client",]
+
+[dependencies.env_logger]
+version = "0.11.8"
+default-features = false
+features = [ "humantime",]

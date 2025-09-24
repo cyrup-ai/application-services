@@ -1,0 +1,70 @@
+[package]
+name = "nimbus-fml"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85.0"
+authors = [ "Nimbus SDK Engineering",]
+license = "MPL-2.0"
+
+[features]
+client-lib = []
+uniffi-bindings = [ "client-lib", "dep:uniffi",]
+
+[lib]
+name = "nimbus_fml"
+
+[dependencies]
+anyhow = "1.0.98"
+serde_yaml = "0.9.34+deprecated"
+thiserror = "2.0.12"
+askama = "0.14.0"
+textwrap = "0.16.2"
+heck = "0.5.0"
+unicode-segmentation = "1.12.0"
+glob = "0.3.2"
+cfg-if = "1.0.1"
+console = "0.16.0"
+lazy_static = "1.5.0"
+sha2 = "0.11.0-rc.0"
+itertools = "0.14.0"
+regex = "1.11.1"
+
+[dev-dependencies]
+tempfile = "3.20.0"
+
+[dependencies.clap]
+version = "4.5.42"
+features = [ "yaml",]
+
+[dependencies.serde_json]
+version = "1.0.145"
+features = [ "preserve_order",]
+
+[dependencies.serde]
+version = "1.0.221"
+features = [ "derive",]
+
+[dependencies.url]
+version = "2.5.4"
+features = [ "serde",]
+
+[dependencies.reqwest]
+version = "0.12.22"
+features = [ "blocking", "json", "native-tls-vendored",]
+
+[dependencies.uniffi]
+version = "0.29.4"
+optional = true
+
+[dependencies.email_address]
+version = "0.2.9"
+features = [ "serde",]
+
+[build-dependencies.uniffi]
+version = "0.29.4"
+features = [ "build",]
+optional = true
+
+[dev-dependencies.jsonschema]
+version = "0.31.0"
+default-features = false

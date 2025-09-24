@@ -1,0 +1,14 @@
+[[bin]]
+name = "embedded-uniffi-bindgen"
+
+[package]
+name = "embedded-uniffi-bindgen"
+version = "0.1.0"
+authors = [ "The Firefox Sync Developers <sync-team@mozilla.com>",]
+edition = "2024"
+rust-version = "1.85.0"
+license = "MPL-2.0"
+
+[dependencies.uniffi]
+version = "0.29.4"
+features = [ "cli",]

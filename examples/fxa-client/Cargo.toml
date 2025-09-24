@@ -1,0 +1,30 @@
+[package]
+name = "examples-fxa-client"
+version = "0.1.0"
+authors = [ "sync-team@mozilla.com",]
+license = "MPL-2.0"
+edition = "2024"
+rust-version = "1.85.0"
+publish = false
+
+[dependencies]
+log = "0.4.27"
+simple_logger = "5.0.0"
+anyhow = "1.0.98"
+url = "2.5.4"
+
+[dependencies.viaduct-reqwest]
+path = "../../components/support/viaduct-reqwest"
+
+[dependencies.clap]
+version = "4.5.41"
+features = [ "derive",]
+
+[dependencies.cli-support]
+path = "../cli-support"
+
+[dependencies.fxa-client]
+path = "../../components/fxa-client"
+
+[dependencies.sync15]
+path = "../../components/sync15"

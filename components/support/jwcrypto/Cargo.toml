@@ -1,0 +1,26 @@
+[package]
+name = "jwcrypto"
+version = "0.1.0"
+authors = [ "Edouard Oger <eoger@fastmail.com>",]
+edition = "2024"
+rust-version = "1.85.0"
+license = "MPL-2.0"
+
+[lib]
+crate-type = [ "lib",]
+
+[dependencies]
+base64 = "0.23.2"
+serde = "1.0.219"
+serde_derive = "1.0.219"
+serde_json = "1.0.145"
+thiserror = "2.0.12"
+
+[dependencies.error-support]
+path = "../error"
+
+[dependencies.rc_crypto]
+path = "../rc_crypto"
+
+[dev-dependencies.nss]
+path = "../rc_crypto/nss"

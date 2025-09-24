@@ -1,0 +1,20 @@
+[package]
+name = "uniffi-bindgen-library-mode"
+version = "0.1.0"
+authors = [ "The Firefox Sync Developers <sync-team@mozilla.com>",]
+edition = "2024"
+rust-version = "1.85.0"
+license = "MPL-2.0"
+
+[dependencies]
+clap = "4.5.42"
+cargo_metadata = "0.21.0"
+camino = "1.1.10"
+anyhow = "1.0.98"
+
+[dependencies.uniffi]
+version = "0.29.4"
+features = [ "cli",]
+
+[dependencies.uniffi_bindgen]
+version = "0.29.4"

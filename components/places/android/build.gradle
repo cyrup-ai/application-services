@@ -1,0 +1,34 @@
+plugins {
+    alias libs.plugins.python.envs.plugin
+}
+
+apply from: "$appServicesRootDir/build-scripts/component-common.gradle"
+apply from: "$appServicesRootDir/publish.gradle"
+
+ext {
+    gleanNamespace = "mozilla.telemetry.glean"
+    if (gradle.hasProperty("mozconfig")) {
+        gleanPythonEnvDir = gradle.mozconfig.substs.GRADLE_GLEAN_PARSER_VENV
+    }
+}
+apply plugin: "org.mozilla.telemetry.glean-gradle-plugin"
+
+android {
+    namespace 'org.mozilla.appservices.places'
+}
+
+dependencies {
+    // Part of the public API.
+    api project(':sync15')
+
+    implementation libs.mozilla.glean
+
+    testImplementation libs.mozilla.glean.forUnitTests
+    testImplementation libs.androidx.test.core
+    testImplementation libs.androidx.work.testing
+    testImplementation project(':syncmanager')
+}
+
+ext.configureUniFFIBindgen("places")
+ext.dependsOnTheMegazord()
+ext.configurePublish()

@@ -1,0 +1,54 @@
+[[example]]
+name = "places-utils"
+path = "src/places-utils.rs"
+
+[package]
+name = "example-places-utils"
+version = "0.1.0"
+authors = [ "sync-team@mozilla.com",]
+license = "MPL-2.0"
+edition = "2024"
+rust-version = "1.85.0"
+publish = false
+
+[dev-dependencies]
+serde = "1.0.219"
+serde_derive = "1.0.219"
+serde_json = "1.0.145"
+log = "0.4.27"
+url = "2.5.4"
+structopt = "0.3.26"
+tempfile = "3.20.0"
+anyhow = "1.0.98"
+ctrlc = "3.4.7"
+
+[dev-dependencies.places]
+path = "../../components/places"
+
+[dev-dependencies.sync-guid]
+path = "../../components/support/guid"
+
+[dev-dependencies.types]
+path = "../../components/support/types"
+
+[dev-dependencies.error-support]
+path = "../../components/support/error"
+
+[dev-dependencies.interrupt-support]
+path = "../../components/support/interrupt"
+
+[dev-dependencies.sql-support]
+path = "../../components/support/sql"
+features = [ "debug-tools",]
+
+[dev-dependencies.sync15]
+path = "../../components/sync15"
+
+[dev-dependencies.viaduct-reqwest]
+path = "../../components/support/viaduct-reqwest"
+
+[dev-dependencies.cli-support]
+path = "../cli-support"
+
+[dev-dependencies.fxa-client]
+path = "../../components/fxa-client"

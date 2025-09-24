@@ -1,0 +1,42 @@
+[package]
+name = "rc_crypto"
+version = "0.1.0"
+authors = [ "Sync Team <sync-team@mozilla.com>",]
+edition = "2024"
+rust-version = "1.85.0"
+license = "MPL-2.0"
+
+[lib]
+crate-type = [ "lib",]
+
+[dependencies]
+base64 = "0.23.2"
+hex = "0.4.3"
+thiserror = "2.0.12"
+
+[features]
+default = []
+gecko = [ "nss/gecko",]
+backtrace = [ "error-support/backtrace",]
+
+[dependencies.error-support]
+path = "../error"
+
+[dependencies.nss]
+path = "nss"
+
+[dependencies.hawk]
+version = "5.0.1"
+default-features = false
+optional = true
+
+[dependencies.ece]
+version = "2.3.1"
+default-features = false
+features = [ "serializable-keys",]
+optional = true
+
+[dev-dependencies.ece]
+version = "2.3.1"
+default-features = false
+features = [ "serializable-keys", "backend-test-helper",]

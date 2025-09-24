@@ -1,0 +1,29 @@
+[[bench]]
+name = "places-bench"
+harness = false
+path = "src/bench.rs"
+
+[package]
+name = "places-bench"
+version = "0.1.0"
+authors = [ "sync-team@mozilla.com",]
+license = "MPL-2.0"
+edition = "2024"
+rust-version = "1.85.0"
+publish = false
+
+[dependencies]
+criterion = "0.7.0"
+tempfile = "3.20.0"
+parking_lot = "0.12.4"
+serde_json = "1.0.145"
+url = "2.5.4"
+
+[dependencies.places]
+path = "../../../components/places"
+
+[dependencies.sql-support]
+path = "../../../components/support/sql"
+
+[dependencies.types]
+path = "../../../components/support/types"

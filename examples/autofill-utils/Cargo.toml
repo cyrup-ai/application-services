@@ -1,0 +1,50 @@
+[[example]]
+name = "autofill-utils"
+path = "src/autofill-utils.rs"
+
+[package]
+name = "example-autofill-utils"
+version = "0.1.0"
+authors = [ "sync-team@mozilla.com",]
+license = "MPL-2.0"
+edition = "2024"
+rust-version = "1.85.0"
+publish = false
+
+[dev-dependencies]
+anyhow = "1.0.98"
+log = "0.4.27"
+serde_json = "1.0.145"
+structopt = "0.3.26"
+
+[dev-dependencies.autofill]
+path = "../../components/autofill"
+
+[dev-dependencies.cli-support]
+path = "../cli-support"
+
+[dev-dependencies.fxa-client]
+path = "../../components/fxa-client"
+
+[dev-dependencies.error-support]
+path = "../../components/support/error"
+
+[dev-dependencies.interrupt-support]
+path = "../../components/support/interrupt"
+
+[dev-dependencies.rusqlite]
+version = "0.37.0"
+features = [ "functions", "bundled", "serde_json", "unlock_notify",]
+
+[dev-dependencies.sql-support]
+path = "../../components/support/sql"
+
+[dev-dependencies.sync-guid]
+path = "../../components/support/guid"
+features = [ "rusqlite_support", "random",]
+
+[dev-dependencies.sync15]
+path = "../../components/sync15"
+
+[dev-dependencies.viaduct-reqwest]
+path = "../../components/support/viaduct-reqwest"

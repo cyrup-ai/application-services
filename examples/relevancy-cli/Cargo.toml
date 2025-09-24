@@ -1,0 +1,41 @@
+[package]
+name = "examples-relevancy-cli"
+version = "0.1.0"
+license = "MPL-2.0"
+edition = "2024"
+rust-version = "1.85.0"
+publish = false
+
+[dependencies]
+log = "0.4.27"
+anyhow = "1.0.98"
+
+[dependencies.viaduct-reqwest]
+path = "../../components/support/viaduct-reqwest"
+
+[dependencies.env_logger]
+version = "0.11.8"
+default-features = false
+
+[dependencies.clap]
+version = "4.5.41"
+features = [ "derive",]
+
+[dependencies.cli-support]
+path = "../cli-support"
+
+[dependencies.interrupt-support]
+path = "../../components/support/interrupt"
+
+[dependencies.places]
+path = "../../components/places"
+
+[dependencies.relevancy]
+path = "../../components/relevancy"
+
+[dependencies.sync15]
+path = "../../components/sync15"
+
+[dependencies.nss]
+version = "0.1.0"
+path = "../../components/support/rc_crypto/nss"

@@ -1,0 +1,15 @@
+[package]
+name = "systest"
+version = "0.1.0"
+authors = [ "Edouard Oger <eoger@fastmail.com>",]
+edition = "2024"
+rust-version = "1.85.0"
+
+[dependencies]
+libc = "1.0.0-alpha.1"
+
+[build-dependencies]
+ctest2 = "0.4.10"
+
+[dependencies.nss_sys]
+path = "../nss_sys"

@@ -1,0 +1,60 @@
+[package]
+name = "sync-test"
+version = "0.1.0"
+authors = [ "Thom Chiovoloni <tchiovoloni@mozilla.com>",]
+edition = "2024"
+rust-version = "1.85.0"
+license = "MPL-2.0"
+
+[dependencies]
+url = "2.5.4"
+env_logger = "0.11.8"
+log = "0.4.27"
+anyhow = "1.0.98"
+rand = "0.9.2"
+lazy_static = "1.5.0"
+structopt = "0.3.26"
+serde = "1.0.219"
+serde_derive = "1.0.219"
+serde_json = "1.0.145"
+base64 = "0.23.2"
+
+[dependencies.viaduct-reqwest]
+path = "../../components/support/viaduct-reqwest"
+
+[dependencies.viaduct]
+path = "../../components/viaduct"
+
+[dependencies.autofill]
+path = "../../components/autofill"
+
+[dependencies.logins]
+path = "../../components/logins"
+
+[dependencies.sync15]
+path = "../../components/sync15"
+
+[dependencies.sync_manager]
+path = "../../components/sync_manager"
+
+[dependencies.restmail-client]
+path = "../../components/support/restmail-client"
+
+[dependencies.tabs]
+path = "../../components/tabs"
+
+[dependencies.fxa-client]
+path = "../../components/fxa-client"
+
+[dependencies.sync-guid]
+path = "../../components/support/guid"
+features = [ "rusqlite_support", "random",]
+
+[dependencies.interrupt-support]
+path = "../../components/support/interrupt"
+
+[dependencies.cli-support]
+path = "../../examples/cli-support"
+
+[dependencies.nss]
+path = "../../components/support/rc_crypto/nss"

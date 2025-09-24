@@ -1,0 +1,13 @@
+[package]
+name = "swift_components_docs"
+edition = "2024"
+rust-version = "1.85.0"
+version = "0.1.0"
+authors = ["Sync Team <sync-team@mozilla.com>"]
+license = "MPL-2.0"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+megazord_ios = { path = "../../megazords/ios-rust" }
